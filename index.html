@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Invitation</title>
 
 <style>
@@ -39,10 +38,27 @@ body {
 
 <button id="openButton" onclick="openInvitation()">OPEN</button>
 
+<video id="music"
+       loop
+       playsinline
+       preload="auto"
+       style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;">
+  <source src="Arose%20mahtab%20.mov" type="video/quicktime">
+</video>
+
 <script>
 function openInvitation() {
-  window.location.href =
-    "https://www.invitedrop.com/i/896d8a99-e9eb-4ed6-8505-0fb7fe46d767";
+
+  const music = document.getElementById("music");
+
+  music.play().catch(function(error) {
+    console.log(error);
+  });
+
+  window.open(
+    "https://www.invitedrop.com/i/896d8a99-e9eb-4ed6-8505-0fb7fe46d767",
+    "_blank"
+  );
 }
 </script>
 
